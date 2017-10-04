@@ -18,12 +18,32 @@ echo "127.0.1.1    MyArch.localdomain    MyArch" >> /etc/hosts
 
 #install bootloader
 pacman -S grub efibootmgr
+y
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pacman -S sudo xorg plasma kde-application kde-l10n-zh_cn sddm
+pacman -S sudo
+
+
+pacman -S xorg
+
+
+pacman -S plasma
+
+
+pacman -S kde-applications
+
+
+pacman -S kde-l10n-zh_cn
+
+
+pacman -S sddm
+
+
 systemctl enable sddm
 systemctl disable netctl
 systemctl enable NetworkManager
 
 useradd -m -G wheel me
+
+reboot
