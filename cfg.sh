@@ -27,14 +27,14 @@ pacman -S sudo
 
 pacman -S xorg
 
-
-pacman -S plasma
-
-
-pacman -S kde-applications
+pacman -S plasma-destop
+#pacman -S plasma
 
 
-pacman -S kde-l10n-zh_cn
+#pacman -S kde-applications
+
+
+#pacman -S kde-l10n-zh_cn
 
 
 pacman -S sddm
