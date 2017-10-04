@@ -47,7 +47,7 @@ pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
-wget 
-mv config.sh /mnt/root/config.sh
+wget https://github.com/T4NGT4O/ArchInstallSh/blob/master/cfg.sh 
+mv cfg.sh /mnt/root/config.sh
 chmod +x /mnt/root/config.sh
 arch-chroot /mnt /root/config.sh

@@ -10,9 +10,9 @@ locale-gen
 #set console language
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
 #set host name
-echo "T4OArch" > /etc/hostname
+echo "MyArch" > /etc/hostname
 #set hosts 
-echo "127.0.1.1    T4OArch.localdomain    T4OArch" >> /etc/hosts
+echo "127.0.1.1    MyArch.localdomain    T4OArch" >> /etc/hosts
 #change root passwd
 #not suitable for github version
 
@@ -26,4 +26,4 @@ systemctl enable sddm
 systemctl disable netctl
 systemctl enable NetworkManager
 
-useradd -m -G wheel t4o
+useradd -m -G wheel me
