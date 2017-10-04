@@ -1,18 +1,15 @@
 #!/bin/bash
 
 #partition about 42G
-fdisk /dev/sda
 #make a gpt table
+echo "
 g
-#make new partition 1 and mklabel EFI(1)    
 n
 1
 
 +512M
 t
 1
-1
-#make new partition 2 and mklabe linux /root x86_64(24)
 n
 2
 
@@ -20,7 +17,6 @@ n
 t
 2
 24
-#make new partition 3 and mklabe linux /home(28)
 n
 3
 
@@ -28,8 +24,9 @@ n
 t
 3
 28
-#write changes
 w
+q
+" | fdisk /dev/sda
 #mkfs
 mkfs.fat -F32 /dev/sda1
 mkfs.xfs /dev/sda2
@@ -41,13 +38,14 @@ mkdir /mnt/home
 mount /dev/sda1 /mnt/boot
 mount /dev/sda2 /mnt/boot
 #change mirrorlist
-wget -O /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/?country=CN
+#wget -O /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/?country=CN
+pacman -S reflector --verbose --country "China" -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist
 
 pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab
-
-wget https://github.com/T4NGT4O/ArchInstallSh/blob/master/cfg.sh 
+mkdir /mnt/root
+wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/cfg.sh 
 mv cfg.sh /mnt/root/config.sh
 chmod +x /mnt/root/config.sh
 arch-chroot /mnt /root/config.sh
