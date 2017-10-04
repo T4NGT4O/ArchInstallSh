@@ -12,7 +12,7 @@ echo "LANG=en_US.UTF-8" > /etc/locale.conf
 #set host name
 echo "MyArch" > /etc/hostname
 #set hosts 
-echo "127.0.1.1    MyArch.localdomain    T4OArch" >> /etc/hosts
+echo "127.0.1.1    MyArch.localdomain    MyArch" >> /etc/hosts
 #change root passwd
 #not suitable for github version
 
