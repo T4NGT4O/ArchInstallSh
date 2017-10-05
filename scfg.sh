@@ -15,7 +15,9 @@ echo "MyArch" > /etc/hostname
 echo "127.0.1.1    MyArch.localdomain    MyArch" >> /etc/hosts
 #change root passwd
 #not suitable for github version
-
+#install vim
+echo "Y
+" | pacman -S vim
 #install bootloader
 echo "Y
 " | pacman -S grub efibootmgr
