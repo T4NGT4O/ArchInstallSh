@@ -3,9 +3,9 @@
 #partition about 42G
 #make a gpt table by parted
 parted -s /dev/sda mklabel gpt 
-parted -s /dev/sda efi mkpart 2M 512M
-parted -s /dev/sda root mkpart 512M 32G 
-parted -s /dev/sda home mkpart 32G 40G 
+parted -s /dev/sda mkpart efi 2M 512M
+parted -s /dev/sda mkpart root 512M 32G 
+parted -s /dev/sda mkpart home 32G 40G 
 parted -s /dev/sda set 1 esp on
 parted -l
 read -p 'any key' tmp
