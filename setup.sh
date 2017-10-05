@@ -1,8 +1,12 @@
 #!/bin/bash
 
 #partition about 42G
-#make a gpt table
-parted -s /dev/sda mklabel gpt mkpart 2M 512M mkpart 512M 32G mkpart 32G 40G set 1 esp on 
+#make a gpt table by parted
+parted -s /dev/sda mklabel gpt 
+parted -s /dev/sda mkpart 2M 512M
+parted -s /dev/sda mkpart 512M 32G 
+parted -s /dev/sda mkpart 32G 40G 
+parted -s /dev/sda set 1 sep on
 #mkfs
 mkfs.fat -F32 /dev/sda1
 mkfs.xfs /dev/sda2
@@ -25,7 +29,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/cfg.sh 
 
-mv cfg.sh /mnt/root/config.sh
+cp cfg.sh /mnt/root/config.sh
 chmod +x /mnt/root/config.sh
 arch-chroot /mnt /root/config.sh
 shutdown -h 0
