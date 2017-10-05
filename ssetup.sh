@@ -47,7 +47,6 @@ pacstrap /mnt base
 genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/scfg.sh 
-vim scfg.sh
 read -p "any key..." tmp
 mv scfg.sh /mnt/root/sconfig.sh
 chmod +x /mnt/root/sconfig.sh
