@@ -42,6 +42,7 @@ mount /dev/sda3 /mnt/home
 #pacman -S reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 echo 'Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
 Server = http://mirror.bjtu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+#install basic system and develop tools
 pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab
