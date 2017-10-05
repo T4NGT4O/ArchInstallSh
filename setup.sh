@@ -7,7 +7,7 @@ parted -s /dev/sda mkpart 2M 512M
 parted -s /dev/sda mkpart 512M 32G 
 parted -s /dev/sda mkpart 32G 40G 
 parted -s /dev/sda set 1 esp on
-parted -p
+parted -l
 read -p 'any key' tmp
 #mkfs
 mkfs.fat -F32 /dev/sda1
