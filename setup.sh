@@ -6,7 +6,9 @@ parted -s /dev/sda mklabel gpt
 parted -s /dev/sda mkpart 2M 512M
 parted -s /dev/sda mkpart 512M 32G 
 parted -s /dev/sda mkpart 32G 40G 
-parted -s /dev/sda set 1 sep on
+parted -s /dev/sda set 1 esp on
+parted -p
+read -p 'any key' tmp
 #mkfs
 mkfs.fat -F32 /dev/sda1
 mkfs.xfs /dev/sda2
