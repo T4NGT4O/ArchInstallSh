@@ -1,6 +1,6 @@
 #set time
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
-hwclock --systohc --utc
+#hwclock --systohc --utc
 #set languages
 echo 'zh_CN.UTF-8
 zh_HK.UTF-8
@@ -41,8 +41,8 @@ Y
 
 #pacman -S kde-l10n-zh_cn
 
-
-pacman -S sddm
+echo "
+Y" | pacman -S sddm
 
 
 systemctl enable sddm

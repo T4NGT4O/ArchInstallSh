@@ -48,7 +48,7 @@ genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/cfg.sh 
 vim cfg.sh
-read -p "any key..." tmp
 mv cfg.sh /mnt/root/config.sh
 chmod +x /mnt/root/config.sh
 arch-chroot /mnt /root/config.sh
+shutdown -h 0
