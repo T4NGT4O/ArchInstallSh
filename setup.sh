@@ -39,8 +39,9 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda2 /mnt/boot
 #change mirrorlist
 #wget -O /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/?country=CN
-pacman -S reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
-
+#pacman -S reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
+echo "Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = http://mirror.bjtu.edu.cn/archlinux/$repo/os/$arch" > /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab

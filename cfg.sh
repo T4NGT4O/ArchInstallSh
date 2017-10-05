@@ -22,12 +22,17 @@ echo "Y
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-pacman -S sudo
+echo "Y
+" | pacman -S sudo
 
 
-pacman -S xorg
+echo "
+Y
+" | pacman -S xorg
 
-pacman -S plasma-destop
+echo "
+Y
+" | pacman -S plasma-destop
 #pacman -S plasma
 
 
