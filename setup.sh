@@ -36,7 +36,7 @@ mount /dev/sda2 /mnt
 mkdir /mnt/boot
 mkdir /mnt/home
 mount /dev/sda1 /mnt/boot
-mount /dev/sda2 /mnt/boot
+mount /dev/sda2 /mnt/home
 #change mirrorlist
 #wget -O /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/?country=CN
 #pacman -S reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
