@@ -39,13 +39,15 @@ mount /dev/sda1 /mnt/boot
 mount /dev/sda2 /mnt/boot
 #change mirrorlist
 #wget -O /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/?country=CN
-pacman -S reflector --verbose --country "China" -l 20 -p http --sort rate --save /etc/pacman.d/mirrorlist
+pacman -S reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
 
 pacstrap /mnt base base-devel
 
 genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/cfg.sh 
+vim cfg.sh
+read -p "any key..." tmp
 mv cfg.sh /mnt/root/config.sh
 chmod +x /mnt/root/config.sh
 arch-chroot /mnt /root/config.sh

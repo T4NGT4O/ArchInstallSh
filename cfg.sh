@@ -17,8 +17,8 @@ echo "127.0.1.1    MyArch.localdomain    MyArch" >> /etc/hosts
 #not suitable for github version
 
 #install bootloader
-pacman -S grub efibootmgr
-y
+echo "Y
+" | pacman -S grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
@@ -45,5 +45,4 @@ systemctl disable netctl
 systemctl enable NetworkManager
 
 useradd -m -G wheel me
-
-reboot
+read -p "any key..." tmp
