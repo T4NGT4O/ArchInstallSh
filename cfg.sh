@@ -22,15 +22,15 @@ echo "127.0.1.1    MyArch.localdomain    MyArch" >> /etc/hosts
 #not suitable for github version
 
 #install bootloader and config
-pacman -S -noconfirm grub efibootmgr
+pacman -S --noconfirm grub efibootmgr
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
 #install basic tools
-pacman -S -noconfirm sudo vim xorg
+pacman -S --noconfirm sudo vim xorg
 
 #install plasma
-pacman -S -noconfirm plasma sddm	&& systemctl enable sddm
+pacman -S --noconfirm plasma sddm	&& systemctl enable sddm
 
 #pacman -S kde-applications
 
