@@ -2,10 +2,10 @@
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc --utc
 #set languages
-echo "zh_CN.UTF-8
+echo 'zh_CN.UTF-8
 zh_HK.UTF-8
 zh_TW.UTF-8
-en_US.UTF-8" > /etc/locale.gen
+en_US.UTF-8' > /etc/locale.gen
 locale-gen
 #set console language
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
@@ -32,7 +32,7 @@ Y
 
 echo "
 Y
-" | pacman -S plasma-destop
+" | pacman -S plasma-desktop
 #pacman -S plasma
 
 
