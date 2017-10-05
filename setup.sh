@@ -2,31 +2,7 @@
 
 #partition about 42G
 #make a gpt table
-echo "
-g
-n
-1
-
-+512M
-t
-1
-n
-2
-
-+32G
-t
-2
-24
-n
-3
-
-+8G
-t
-3
-28
-w
-q
-" | fdisk /dev/sda
+parted -s /dev/sda mklabel gpt mkpart 2M 512M mkpart 512M 32G mkpart 32G 40G set 1 esp on 
 #mkfs
 mkfs.fat -F32 /dev/sda1
 mkfs.xfs /dev/sda2
