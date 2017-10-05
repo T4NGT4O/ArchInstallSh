@@ -27,7 +27,7 @@ Server = http://mirror.bjtu.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mir
 #install basic system and develop tools
 pacstrap /mnt base base-devel
 
-genfstab -U /mnt >> /mnt/etc/fstab
+genfstab -U /mnt > /mnt/etc/fstab
 mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/cfg.sh 
 
