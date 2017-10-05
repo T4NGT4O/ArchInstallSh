@@ -2,10 +2,10 @@
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc --utc
 #set languages
-echo 'zh_CN.UTF-8
-zh_HK.UTF-8
-zh_TW.UTF-8
-en_US.UTF-8' >> /etc/locale.gen
+echo 'zh_CN.UTF-8 UTF-8
+zh_HK.UTF-8 UTF-8
+zh_TW.UTF-8 UTF-8
+en_US.UTF-8 UTF-8' > /etc/locale.gen
 locale-gen
 #set console language
 echo "LANG=en_US.UTF-8" > /etc/locale.conf
@@ -22,28 +22,15 @@ echo "Y
 grub-install --target=x86_64-efi --efi-directory=/boot --bootloader-id=grub
 grub-mkconfig -o /boot/grub/grub.cfg
 
-echo "Y
-" | pacman -S sudo
-
-
 #pacman -S xorg
-
 #pacman -S plasma-desktop
 #pacman -S plasma
-
-
 #pacman -S kde-applications
-
-
 #pacman -S kde-l10n-zh_cn
-
-
 #pacman -S sddm
-
-
 #systemctl enable sddm
 #systemctl disable netctl
 #systemctl enable NetworkManager
 
-useradd -m -G wheel me
+vim /boot/grub/grub.cfg
 read -p "any key..." tmp

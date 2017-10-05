@@ -31,6 +31,8 @@ q
 mkfs.fat -F32 /dev/sda1
 mkfs.xfs /dev/sda2
 mkfs.xfs /dev/sda3
+fdisk -l
+read -p 'any key...' tmp
 #mount
 mount /dev/sda2 /mnt
 mkdir /mnt/boot
@@ -47,6 +49,7 @@ pacstrap /mnt base
 genfstab -U /mnt >> /mnt/etc/fstab
 mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/scfg.sh 
+cat /mnt/etc/fstab
 read -p "any key..." tmp
 mv scfg.sh /mnt/root/sconfig.sh
 chmod +x /mnt/root/sconfig.sh
