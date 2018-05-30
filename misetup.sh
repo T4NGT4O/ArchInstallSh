@@ -34,6 +34,4 @@ mkdir /mnt/root
 wget https://github.com/T4NGT4O/ArchInstallSh/raw/master/micfg.sh 
 cat /mnt/etc/fstab
 read -p "any key..." tmp
-mv micfg.sh /mnt/root/sconfig.sh
-chmod +x /mnt/root/sconfig.sh
-arch-chroot /mnt /root/sconfig.sh
+mv micfg.sh /mnt/root/config.sh
