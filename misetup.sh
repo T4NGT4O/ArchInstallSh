@@ -25,8 +25,7 @@ rm -rf /mnt/boot/EFI/Arch
 #change mirrorlist
 #wget -O /etc/pacman.d/mirrorlist https://www.archlinux.org/mirrorlist/?country=CN
 #pacman -S reflector --verbose -l 200 -p http --sort rate --save /etc/pacman.d/mirrorlist
-echo 'Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
-Server = https://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
+echo 'Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch' > /etc/pacman.d/mirrorlist
 pacstrap /mnt base base-devel
 
 genfstab -L /mnt > /mnt/etc/fstab
